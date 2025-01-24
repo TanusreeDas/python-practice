@@ -1,0 +1,1 @@
+'''Problem: You can climb 1 or 2 steps at a time. Find the number of distinct ways to climb to the top of a staircase with n steps.'''

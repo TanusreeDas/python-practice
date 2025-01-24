@@ -33,6 +33,9 @@ def middle_element_quick_sort(arr):
 def quick_sort(arr):
     return middle_element_quick_sort(arr)
 
+def improved_quick_sort(arr):
+    pass
+
 if __name__=="__main__":
     array_to_sort=[4,3,9,2,1,6,7]
     print(quick_sort(array_to_sort))

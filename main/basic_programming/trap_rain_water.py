@@ -1,0 +1,1 @@
+'''Problem: Given n non-negative integers representing elevation map heights, calculate how much rainwater can be trapped after raining.'''
