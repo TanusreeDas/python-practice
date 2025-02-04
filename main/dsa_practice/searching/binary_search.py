@@ -12,29 +12,29 @@ How it works:
 	•	Repeat on the remaining half until the target is found or the range is empty.
 '''
 
-def binary_search(arr,e):
-    arr.sort()
+def binary_search(arr,e, start_index, end_index):
 
-    middle_index = len(arr)//2
+    if start_index > end_index:
+        return -1
+
+    middle_index = (start_index+end_index)//2
     middle_element = arr[middle_index]
 
     if e == middle_element:
         return middle_index
     elif e<middle_element:
-        arr = arr[middle_index:]
-        binary_search(arr,e)
+        return binary_search(arr,e,middle_index-1,end_index)
     else:
-        arr = arr[1:middle_element]
-        binary_search(arr,e)
+        return binary_search(arr,e,start_index,middle_index+1)
 
     return -1
 
 
 if __name__ == "__main__":
-    array = [4,5,1,7,3,90,8,10]
-    target = 5
+    array = [1, 3, 4, 5, 7, 8, 10, 90]
+    target = 90
 
-    search_result = binary_search(array,target)
+    search_result = binary_search(array,target,0,len(array)-1)
 
     if search_result >=0:
         print (f"Element {target} is found at index {search_result}.")
