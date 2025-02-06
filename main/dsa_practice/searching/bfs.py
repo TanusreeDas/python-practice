@@ -13,3 +13,50 @@ How it works:
 	•	While the queue is not empty: Dequeue a node and process it. Enqueue all its unvisited neighbors and mark them as visited.
 	•	Continue until all nodes are visited or the target node is found.
 '''
+
+from collections import deque
+
+def breadth_first_search(graph,start,target):
+
+    visited=set()
+    queue=deque()
+    path=list()
+
+    visited.add(start)
+    queue.append(start)
+    path.append(start)
+
+    if start == target:
+        return start
+
+    while queue:
+        current_node=queue.popleft()
+        neighbors=graph[current_node]
+        for neighbor in neighbors:
+            if neighbor == target:
+                return "".join(map(str,path))
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+                path.append('->'+neighbor)
+
+    return 'Not Found'
+
+if __name__ == "__main__":
+    graph = {
+        'A': ['B', 'C'],
+        'B': ['A', 'D', 'E'],
+        'C': ['A', 'F'],
+        'D': ['B'],
+        'E': ['B', 'F'],
+        'F': ['C', 'E']
+    }
+    start ='A'
+    target = 'B'
+
+    search_result = breadth_first_search(graph, start, target)
+
+    if search_result == 'Not Found':
+        print(f"Element {target} is not found in the given graph.")
+    else:
+        print(f"Element {target} is found after visiting {search_result} nodes.")
