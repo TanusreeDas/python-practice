@@ -19,5 +19,5 @@ def find_outlier(integers):
             return num
 
 if __name__=="__main__":
-    numbers = [2, 4, 6, 8, 10, 3]
+    numbers = [1, 2, 2, 6, 8, 10, 3]
     print(find_outlier(numbers))
