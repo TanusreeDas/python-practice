@@ -1,6 +1,15 @@
+'''
+Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
+
+An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
+
+Constraints: s and t consist of lowercase English letters.
+'''
+
 from collections import Counter
 
 class Solution:
+
     @staticmethod
     def is_anagram_simple_method(s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -46,7 +55,9 @@ class Solution:
 
 
 if __name__ == "__main__":
+
     sol = Solution()
+
     print(f"Answer Using Sorted List Two Strings are Anagram: {sol.is_anagram_simple_method('india','ndiai')}")
     print(f"Answer Using Hash Map Two Strings are Anagram: {sol.is_anagram_using_hash_map('america','kolkata')}")
     print(f"Answer Using Hash Table Two Strings are Anagram: {sol.is_anagram_using_array_hash_table('kolkata','kauakol')}")
