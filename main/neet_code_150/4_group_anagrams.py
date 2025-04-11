@@ -57,14 +57,15 @@ class Solution:
         for text in strs:
             place_holder_str = [0]*26
             for c in text:
-                place_holder_str[ord(c)-ord('a')]=1
+                place_holder_str[ord(c)-ord('a')] += 1
             result_dict[tuple(place_holder_str)].append(text)
         return list(result_dict.values())
 
 
 if __name__ == "__main__":
     sol= Solution()
-    chk = ["", "cat", "","act","","dog"]
+    #chk = ["", "cat", "","act","","dog"]
+    chk = ["ddddddddddg","dgggggggggg"]
     print(sol.group_anagrams_sol1(chk))
     print(sol.group_anagrams_sol2(chk))
     print(sol.group_anagrams_sol3(chk))
