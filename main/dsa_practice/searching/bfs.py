@@ -47,12 +47,12 @@ if __name__ == "__main__":
         'A': ['B', 'C'],
         'B': ['A', 'D', 'E'],
         'C': ['A', 'F'],
-        'D': ['B'],
-        'E': ['B', 'F'],
+        'D': ['H'],
+        'E': ['B', 'G'],
         'F': ['C', 'E']
     }
     start ='A'
-    target = 'B'
+    target = 'H'
 
     search_result = breadth_first_search(graph, start, target)
 
