@@ -1,9 +1,9 @@
 '''
 Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
-
 An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
-
 Constraints: s and t consist of lowercase English letters.
+
+Best Approach: Hash Map and Hash Table using array both has O(n+m)
 '''
 
 from collections import Counter
