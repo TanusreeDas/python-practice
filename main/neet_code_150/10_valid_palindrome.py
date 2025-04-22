@@ -11,7 +11,8 @@ class Solution:
         modified_s = ''.join(filter(str.isalnum,s.lower()))
         return modified_s[::-1]==modified_s
 
-    def is_alnum_custom(self,c): #if we are not allowed to use inbuilt isalnum
+    @staticmethod
+    def is_alnum_custom(c): #if we are not allowed to use inbuilt isalnum
         return (
             (ord('A')<=ord(c)<=ord('Z')) or #cconsidering we will only use uppercase letter
             (ord('0') <= ord(c) <= ord('9'))
@@ -31,7 +32,7 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    inputs = ['A man, a plan, a canal: Panama', ".,", ""]
+    inputs = ['A man, a plan, a canal: Panama', '.,', '','A man, a plan, a canal: Panama1']
     for input_str in inputs:
         print(f"Given input: {input_str}")
         print(f"Given output using generic method: {sol.is_palindrome(input_str)}")
