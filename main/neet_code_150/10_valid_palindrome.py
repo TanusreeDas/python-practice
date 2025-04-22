@@ -17,7 +17,6 @@ class Solution:
             (ord('0') <= ord(c) <= ord('9'))
         )
 
-
     def is_palindrome_two_pointer(self,s:str)->bool:
         left_position, right_position = 0, len(s)-1
         while left_position<right_position:
