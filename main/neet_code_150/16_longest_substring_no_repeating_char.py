@@ -6,26 +6,20 @@ s may consist of printable ASCII characters.'''
 
 
 from time import time
-#from collections import defaultdict
 
 class Solution:
     @staticmethod
     def length_of_longest_substring(s: str) -> int: #not working change it.
-        if len(s) == 0:
-            return 0
-        temp_str = {}#defaultdict(int)
-        max_len = 1
-        current_len = 0
-        for c in s:
-            if c in temp_str:
-                current_len = 1
-                temp_str ={c:1}
-            else:
-               current_len +=1
-               temp_str[c]=1
-            max_len = max(max_len,current_len)
-        return max_len
+        unique_set = set()
+        max_length,l =0,0
+        for i,c in enumerate(s):
+            while c in unique_set:
+                unique_set.remove(s[l])
+                l +=1
+            unique_set.add(c)
+            max_length = max(max_length,i-l+1)
 
+        return max_length
 
 
 if __name__ == '__main__':
@@ -35,8 +29,6 @@ if __name__ == '__main__':
     for input in inputs:
         print(f"Processing input no: {count}")
         start_time = time()
-        print(f"Output using brute force method: {sol.length_of_longest_substring(input)} and time taken ={time()-start_time} seconds")
-        #start_time = time()
-        #print(f"Output using two pointer method: {sol.length_of_longest_substring(input)} and time taken ={time()-start_time} seconds")
+        print(f"For given '{input}' input the length of the Longest Substring is: {sol.length_of_longest_substring(input)} and time taken ={time()-start_time} seconds")
         print("*"*40)
         count +=1
